@@ -1,0 +1,51 @@
+.article-container {
+  background-color: grey;
+  padding: 20px;
+}
+
+.article-container h1 {
+  text-align: center;
+  color: white;
+}
+
+.article-text-block {
+  width: 100%;
+  max-width: 800px; 
+  margin: 20px auto;
+  text-align: center;
+  color: white;
+  font-family: 'YourFontName', sans-serif; 
+}
+
+.article-text-block h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.article-text-block p {
+  font-size: 1em;
+  margin: 0;
+}
+
+.article-image-container {
+  margin: 20px 0;
+}
+
+.article-image {
+  width: 100%;
+  max-width: 700px; 
+  display: block;
+  margin: 0 auto;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.article-image:hover {
+  filter: none;
+  transform: scale(1.05);
+}
+
+.article-divider {
+  border-top: 1px solid white;
+  margin: 20px 0;
+  width: 100%;
+}
