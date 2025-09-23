@@ -1,23 +1,18 @@
-// components/ScrollToTop.tsx
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+// src/components/scrolltotop.tsx
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const ScrollToTop = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleRouteChange = () => {
-      window.scrollTo(0, 0);
-    };
+    // Scroll to top when route changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname]);
 
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
-
-  return null;
+  return null; // This component does not render anything
 };
 
 export default ScrollToTop;
