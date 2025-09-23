@@ -1,9 +1,9 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  experimental: {
-    webVitalsAttribution: ['CLS', 'LCP', 'FID'],
+  images: {
+    unoptimized: false,
   },
 };
 
