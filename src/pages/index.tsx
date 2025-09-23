@@ -3,15 +3,15 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/dist/styles.css";
+import "yet-another-react-lightbox/styles.css";
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-import background from "../public/images/ROM_copy_BW.jpg";
-import places1 from "../public/images/4040/000040400021.jpg";
-import places2 from "../public/images/4039/000040390012.jpg";
-import places3 from "../public/images/02501083/025010830025.jpg";
+import background from "/public/images/ROM_copy_BW.jpg";
+import places1 from "/public/images/4040/000040400021.jpg";
+import places2 from "/public/images/4039/000040390012.jpg";
+import places3 from "/public/images/02501083/025010830025.jpg";
 
 const images = [places1.src, places2.src, places3.src]; // <-- use .src
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/dist/styles.css";
+import "yet-another-react-lightbox/styles.css";
 
 const imageFiles = [
   "/images/02501083/00002501083001.jpg",
