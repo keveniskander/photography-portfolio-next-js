@@ -7,42 +7,41 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const imageFiles = [
-  "/images/02501083/00002501083001.jpg",
-  "/images/02501083/00002501083002.jpg",
-  "/images/02501083/00002501083003.jpg",
-  "/images/02501083/00002501083004.jpg",
-  "/images/02501083/00002501083005.jpg",
-  "/images/02501083/00002501083006.jpg",
-  "/images/02501083/00002501083007.jpg",
-  "/images/02501083/00002501083008.jpg",
-  "/images/02501083/00002501083009.jpg",
-  "/images/02501083/00002501083010.jpg",
-  "/images/02501083/00002501083011.jpg",
-  "/images/02501083/00002501083012.jpg",
-  "/images/02501083/00002501083013.jpg",
-  "/images/02501083/00002501083014.jpg",
-  "/images/02501083/00002501083015.jpg",
-  "/images/02501083/00002501083016.jpg",
-  "/images/02501083/00002501083017.jpg",
-  "/images/02501083/00002501083018.jpg",
-  "/images/02501083/00002501083019.jpg",
-  "/images/02501083/00002501083020.jpg",
-  "/images/02501083/00002501083021.jpg",
-  "/images/02501083/00002501083022.jpg",
-  "/images/02501083/00002501083023.jpg",
-  "/images/02501083/00002501083024.jpg",
-  "/images/02501083/00002501083025.jpg",
-  "/images/02501083/00002501083026.jpg",
-  "/images/02501083/00002501083027.jpg",
-  "/images/02501083/00002501083028.jpg",
-  "/images/02501083/00002501083029.jpg",
-  "/images/02501083/00002501083030.jpg",
-  "/images/02501083/00002501083031.jpg",
-  "/images/02501083/00002501083032.jpg",
-  "/images/02501083/00002501083033.jpg",
-  "/images/02501083/00002501083034.jpg",
-  "/images/02501083/00002501083035.jpg",
-  "/images/02501083/00002501083036.jpg"
+  "/images/02501083/025010830001.jpg",
+  "/images/02501083/025010830002.jpg",
+  "/images/02501083/025010830003.jpg",
+  "/images/02501083/025010830004.jpg",
+  "/images/02501083/025010830005.jpg",
+  "/images/02501083/025010830006.jpg",
+  "/images/02501083/025010830007.jpg",
+  "/images/02501083/025010830008.jpg",
+  "/images/02501083/025010830009.jpg",
+  "/images/02501083/025010830010.jpg",
+  "/images/02501083/025010830012.jpg",
+  "/images/02501083/025010830013.jpg",
+  "/images/02501083/025010830014.jpg",
+  "/images/02501083/025010830015.jpg",
+  "/images/02501083/025010830016.jpg",
+  "/images/02501083/025010830017.jpg",
+  "/images/02501083/025010830018.jpg",
+  "/images/02501083/025010830019.jpg",
+  "/images/02501083/025010830020.jpg",
+  "/images/02501083/025010830021.jpg",
+  "/images/02501083/025010830022.jpg",
+  "/images/02501083/025010830023.jpg",
+  "/images/02501083/025010830024.jpg",
+  "/images/02501083/025010830025.jpg",
+  "/images/02501083/025010830026.jpg",
+  "/images/02501083/025010830027.jpg",
+  "/images/02501083/025010830028.jpg",
+  "/images/02501083/025010830029.jpg",
+  "/images/02501083/025010830030.jpg",
+  "/images/02501083/025010830031.jpg",
+  "/images/02501083/025010830032.jpg",
+  "/images/02501083/025010830033.jpg",
+  "/images/02501083/025010830034.jpg",
+  "/images/02501083/025010830035.jpg",
+  "/images/02501083/025010830036.jpg"
   // Add all images sequentially up to the last
 ];
 
@@ -60,10 +59,11 @@ export default function Article3() {
       <Navbar />
       <div className="article-container">
         <div className="article-text article-text-start">
-          <h2>Lebanese Urban Exploration</h2>
-          <p>
-            A journey through the urban corners and hidden alleys, captured
-            through the timeless lens of film photography.
+          <h2>Literally All Over The Place</h2>
+          <p className="article-text">
+            The disorganized, scrappy mess of a roll speaks for itself. It can be succinctly described as a grouping of terribly unbalanced photos with incredibly unique perspectives. We start our journey
+            in the dimly lit Parisian streets wondering what the hell optimal lighting looks like. In the end, we're left with a hot dose of nostalgia and a terrible wine hangover.
+            You may ask: Was it worth it?? -- I invite you to be the judge. 
           </p>
         </div>
 
@@ -81,32 +81,20 @@ export default function Article3() {
             {/* Paragraph separations after photo 11, 21, and at the end */}
             {index === 10 && (
               <div className="article-text article-text-middle">
-                <h2>Midway Pause</h2>
-                <p>
-                  Pausing to reflect, these images mark the heart of the
-                  exploration—capturing fleeting moments of everyday life.
-                </p>
+                <p>I have no recollection of this next grouping of photos and when I received this roll back from the lab, I had more questions than answers. My camera looks to 
+                  have been hijacked at my aunt's house sometime in the late summer of 2023. Its always refreshing to catch a few frames back from the lab that weren't
+                  executed by me and this is no exception.</p>
               </div>
             )}
             {index === 20 && (
               <div className="article-text article-text-middle">
-                <h2>Late Afternoon Streets</h2>
-                <p>
-                  Streets bathed in golden light, where shadows dance with the
-                  textures of the city, captured in every frame.
-                </p>
+                <p>Now from my aunts house we're immediately thrown into a journey that begins in the port of Athens. A few frames on, we find ourselves on a blissful voyage
+                  that takes us to our final destination for this exposition: Milos. This small greek island tucked away peacefully behind the chaos tops my list (and this roll) as
+                  the perfect end to a perfect summer.</p>
               </div>
             )}
           </div>
         ))}
-
-        <div className="article-text article-text-middle">
-          <h2>Final Thoughts</h2>
-          <p>
-            As the journey ends, these photographs tell a story of culture,
-            life, and the undying Lebanese spirit.
-          </p>
-        </div>
       </div>
 
       {isOpen && (

@@ -5,7 +5,7 @@ import '../styles/footer.css'; // adjust path if using /styles folder
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <p>© 2024 ByKevo. All rights reserved.</p>
+      <p>© 2025 ByKevo. All rights reserved.</p>
     </footer>
   );
 };

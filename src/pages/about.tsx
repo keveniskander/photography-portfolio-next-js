@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import myPicture from "../public/images/OIG1.jpg"; // move your image to /public/images
+import myPicture from "../public/images/OIG1.jpg";
 
 export default function About() {
   return (

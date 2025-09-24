@@ -1,19 +1,26 @@
 // pages/index.tsx
+"use client";
+
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import "../styles/index.css";
+import "../styles/footer.css";
+import "../styles/navbar.css";
+import "../styles/article.css";
+import "../styles/places.css"
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
+// Images
 import background from "/public/images/ROM_copy_BW.jpg";
 import places1 from "/public/images/4040/000040400021.jpg";
 import places2 from "/public/images/4039/000040390012.jpg";
 import places3 from "/public/images/02501083/025010830025.jpg";
 
-const images = [places1.src, places2.src, places3.src]; // <-- use .src
+const images = [places1.src, places2.src, places3.src];
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +34,11 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
+      {/* Hero Section */}
       <section className="main-section">
         <div className="main-div">
-          <Image
-            src={background}
-            alt="Background"
-            className="background"
-            fill
-            style={{ objectFit: "cover" }}
-          />
+          <img className="background" src={background.src} alt="Background" />
           <div className="h1-container">
             <h1>ByKevo</h1>
           </div>
@@ -45,69 +48,64 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Portfolio Section */}
       <section className="portfolio-section">
         <div className="portfolio-container">
-          <div className="p-container"></div>
 
           {/* Article 1 */}
-          <div className="article">
-            <Link href="/article1" passHref>
-              <div className="article-content" onClick={() => openLightbox(0)}>
-                <div className="article-text">
-                  <h3>2024 Volume 1</h3>
-                  <p>The Eastern Canadian Stretch</p>
-                  <p className="learn-more">LEARN MORE</p>
-                </div>
-                <Image
-                  src={places1}
+          <div className="article-container">
+            <Link href="/article1" className="article-link">
+              <div className="article-text-block">
+                <h2>2024 Volume 1</h2>
+                <p>The Eastern Canadian Stretch</p>
+                <p className="learn-more">LEARN MORE</p>
+              </div>
+              <div className="article-image-container">
+                <img
+                  src={places1.src}
                   alt="Article 1"
                   className="article-image"
-                  width={600}
-                  height={400}
+                  onClick={() => openLightbox(0)}
                 />
               </div>
             </Link>
+            <div className="article-divider"></div>
           </div>
-
-          <hr />
 
           {/* Article 2 */}
-          <div className="article">
-            <Link href="/article2" passHref>
-              <div className="article-content" onClick={() => openLightbox(1)}>
-                <div className="article-text">
-                  <h3>Elie's Bachelor Banger</h3>
-                  <p>An Olympian Showdown</p>
-                  <p className="learn-more">LEARN MORE</p>
-                </div>
-                <Image
-                  src={places2}
+          <div className="article-container">
+            <Link href="/article2" className="article-link">
+              <div className="article-text-block">
+                <h2>Elie's Bachelor Banger</h2>
+                <p>An Olympian Showdown</p>
+                <p className="learn-more">LEARN MORE</p>
+              </div>
+              <div className="article-image-container">
+                <img
+                  src={places2.src}
                   alt="Article 2"
                   className="article-image"
-                  width={600}
-                  height={400}
+                  onClick={() => openLightbox(1)}
                 />
               </div>
             </Link>
+            <div className="article-divider"></div>
           </div>
 
-          <hr />
-
           {/* Article 3 */}
-          <div className="article">
-            <Link href="/article3" passHref>
-              <div className="article-content" onClick={() => openLightbox(2)}>
-                <div className="article-text">
-                  <h3>2023 Volume 1</h3>
-                  <p>A Journey Back</p>
-                  <p className="learn-more">LEARN MORE</p>
-                </div>
-                <Image
-                  src={places3}
+          <div className="article-container">
+            <Link href="/article3" className="article-link">
+              <div className="article-text-block">
+                <h2>2023 Volume 1</h2>
+                <p>A Journey Back</p>
+                <p className="learn-more">LEARN MORE</p>
+              </div>
+              <div className="article-image-container">
+                <img
+                  src={places3.src}
                   alt="Article 3"
                   className="article-image"
-                  width={600}
-                  height={400}
+                  onClick={() => openLightbox(2)}
                 />
               </div>
             </Link>
@@ -115,14 +113,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Lightbox */}
       {isOpen && (
         <Lightbox
-          slides={images.map((src) => ({ src }))} // <-- Lightbox expects objects with src
-          open={isOpen}
-          index={photoIndex}
-          close={() => setIsOpen(false)}
+          mainSrc={images[photoIndex]}
+          nextSrc={images[(photoIndex + 1) % images.length]}
+          prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() =>
+            setPhotoIndex((photoIndex + images.length - 1) % images.length)
+          }
+          onMoveNextRequest={() =>
+            setPhotoIndex((photoIndex + 1) % images.length)
+          }
+          imageTitle={<a href={images[photoIndex]} download>Download</a>}
         />
       )}
+
       <Footer />
     </>
   );
